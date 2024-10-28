@@ -1,0 +1,127 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            right: -250px; /* Initially hidden (off-screen on the right side) */
+            background-color: #333;
+            padding-top: 20px;
+            overflow-x: hidden;
+            transition: 0.3s; /* Smooth transition */
+        }
+
+        /* Sidebar links */
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            transition: 0.3s;
+        }
+
+        /* Hover effect for links */
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        /* The checkbox to toggle the sidebar */
+        input[type="checkbox"] {
+            display: none; /* Hide the checkbox */
+        }
+
+        /* Label for the checkbox (this is our toggle button) */
+        label {
+            position: fixed;
+            right: 10px; /* Move button to the right side */
+            top: 10px;
+            font-size: 30px;
+            background-color: grey; /* Initial button color */
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1001; /* Keep the button above everything */
+            transition: background-color 0.3s; /* Smooth color change */
+        }
+
+        /* Change button color when the checkbox is checked (menu is open) */
+        input[type="checkbox"]:checked ~ label {
+            background-color: #333; /* Change button to white */
+            color: black; /* Change text color to black for contrast */
+        }
+
+        /* Move sidebar into view when checkbox is checked */
+        input[type="checkbox"]:checked ~ .sidebar {
+            right: 0; /* Slide sidebar into view from the right */
+        }
+
+        /* Shift content to the left when sidebar is open */
+        input[type="checkbox"]:checked ~ .main-content {
+            margin-right: 250px; /* Shift content to create space for the sidebar */
+        }
+
+        /* Main content */
+        .main-content {
+            padding: 20px;
+            transition: margin-right 0.3s; /* Smooth content shift */
+}
+
+.main-content h1 {
+    color: white;
+    text-shadow: 2px 2px #ff0000;
+    text-align: center;
+    font-size: 40px;
+}
+
+body {
+            background-image: url('https://webnews.bg/uploads/images/20/9920/529920/768x432.jpg?_=1620390194'); /* URL of the background image */
+            background-size: cover; /* Make the image cover the entire page */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            background-position: center center; /* Center the image */
+            height: 100vh; /* Ensure the body takes full viewport height */
+            margin: 0;
+            font-family: "Merriweather", serif;
+            font-weight: 300;
+            font-style: normal;        
+        }
+.logo {
+    text-align: center;
+}
+
+.main-content p {
+    text-align:center ;
+    font-size: 26px;
+    text-shadow: 2px 2px black;
+    color: white;
+}
+.copyright {
+    text-align: center;
+    background-color: white;
+    color: ;
+}
+
+.sidebar p {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 13px;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer {
+            position: fixed; /* Stay fixed at the bottom of the viewport */
+            bottom: 0;
+            width: 100%; /* Full-width footer */
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
